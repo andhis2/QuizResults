@@ -25,7 +25,7 @@
         $report = $generator->createReport();
 
         $dateTime = date('Y-m-d_H-i-s');
-        $resultFilename = dirname(__FILE__) . "/result/quiz_result_{$dateTime}.txt";
+        $resultFilename = dirname(__FILE__) . "/quiz_result_{$dateTime}.txt";
         @file_put_contents($resultFilename, $report);
 
         echo "OK";
@@ -39,7 +39,7 @@
 
     function _log($requestParameters)
     {
-        $logFilename = dirname(__FILE__) . '/log/quiz_results.log';
+        $logFilename = dirname(__FILE__) . '/quiz_results.log';
         $event       = array('ts' => date('Y-m-d H:i:s'), 'request_parameters' => $requestParameters, 'ts_' => time());
         $logMessage  = json_encode($event);
         $logMessage .= ',' . PHP_EOL;
